@@ -7,7 +7,7 @@ import javax.persistence.Table;
 import java.util.Objects;
 
 @Entity
-@Table(name="default.dbo.users")
+@Table(name="everyloop.dbo.users")
 public class User {
     @Id
     @Column(name="ID")

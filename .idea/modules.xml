@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JPALab.iml" filepath="$PROJECT_DIR$/JPALab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jpa-relations.iml" filepath="$PROJECT_DIR$/jpa-relations.iml" />
     </modules>
   </component>
 </project>

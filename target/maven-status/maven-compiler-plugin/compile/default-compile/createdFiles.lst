@@ -1,0 +1,5 @@
+com/johanastrom/users/User.class
+com/johanastrom/integration/UserDAOImpl.class
+com/johanastrom/integration/UserDAO.class
+com/johanastrom/main/TestMain.class
+com/johanastrom/main/Main.class
