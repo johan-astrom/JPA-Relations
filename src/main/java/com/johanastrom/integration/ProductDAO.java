@@ -15,7 +15,8 @@ public interface ProductDAO {
     void add(Product p);
 
     /**
-     * Changes the unitPrice field by the specified value. Returns the new price.
+     * Changes the unitPrice field by the specified value. Returns the new price,
+     * or if new price is less than 0, does not update the price, returns -1 and prints a message.
      * @param id
      *        Id of the Product object to update.
      * @param value

@@ -121,4 +121,20 @@ public class Product {
     public void setDiscontinued(int discontinued) {
         this.discontinued = discontinued;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", productName='" + productName + '\'' +
+                ", supplier=" + supplier.getCompanyName() +
+                ", productCategory=" + productCategory.getCategoryName() +
+                ", quantityPerUnit='" + quantityPerUnit + '\'' +
+                ", unitPrice=" + unitPrice +
+                ", unitsInStock=" + unitsInStock +
+                ", unitsOnOrder=" + unitsOnOrder +
+                ", reorderLevel=" + reorderLevel +
+                ", discontinued=" + discontinued +
+                '}';
+    }
 }

@@ -24,12 +24,14 @@ public class ProductDAOImpl implements ProductDAO {
     }
 
     @Override
-    public float incrementUnitPrice(int id, float incrementValue) {
+    public float incrementUnitPrice(int id, float value) {
         em = emf.createEntityManager();
         em.getTransaction().begin();
         Product product = em.find(Product.class, id);
-        float newPrice = product.getUnitPrice() + incrementValue;
+        float newPrice = product.getUnitPrice() + value;
         if (newPrice<0){
+            em.getTransaction().commit();
+            System.out.println("The entered value is too big, price was not updated.");
             return -1;
         }
         product.setUnitPrice(newPrice);
@@ -41,7 +43,7 @@ public class ProductDAOImpl implements ProductDAO {
     @Override
     public List<Product> getAll() {
         em = emf.createEntityManager();
-        List<Product> productList= em.createQuery("select Product from Product")
+        List<Product> productList= em.createQuery("select p from Product p")
                 .getResultList();
         return productList;
     }
@@ -50,7 +52,7 @@ public class ProductDAOImpl implements ProductDAO {
     public Supplier getSupplier(int id) {
         em = emf.createEntityManager();
         Product p = em.find(Product.class, id);
-
+        System.out.println("Supplier is: " + p.getSupplier().getCompanyName());
         return p.getSupplier();
     }
 
@@ -58,8 +60,8 @@ public class ProductDAOImpl implements ProductDAO {
     public List<Product> getByCategory(ProductCategory pc) {
         em = emf.createEntityManager();
         List<Product> productsInCategory =
-                em.createQuery("select p from Product p where p.productCategory = :prodCategory")
-                .setParameter("prodCategory", pc)
+                em.createQuery("select p from Product p where p.productCategory.categoryName = :prodCategory")
+                .setParameter("prodCategory", pc.getCategoryName())
                 .getResultList();
         return productsInCategory;
     }

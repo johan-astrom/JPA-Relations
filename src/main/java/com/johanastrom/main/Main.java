@@ -1,5 +1,8 @@
 package com.johanastrom.main;
 
+import com.johanastrom.company.Product;
+import com.johanastrom.integration.ProductDAO;
+import com.johanastrom.integration.ProductDAOImpl;
 import com.johanastrom.integration.UserDAOImpl;
 import com.johanastrom.users.User;
 
@@ -9,7 +12,13 @@ public class Main {
 
     public static void main(String[] args){
 
-        UserDAOImpl userDAO = new UserDAOImpl();
+        ProductDAOImpl productDAO = new ProductDAOImpl();
+
+        System.out.println(productDAO.getSupplier(71));
+
+
+
+        /*UserDAOImpl userDAO = new UserDAOImpl();
 
         boolean persist = userDAO.create(new User("890607-1234", "johast", "myPwd123", "Johan", "Åström", "johan@johansmail.com", "098765432"));
         System.out.println(persist);
@@ -33,5 +42,7 @@ public class Main {
 
         boolean deleted = (userDAO.delete("890607-1234"));
         System.out.println(deleted);
+
+         */
     }
 }

@@ -38,4 +38,16 @@ public class Supplier {
     public String getCountry() {
         return country;
     }
+
+    @Override
+    public String toString() {
+        return "Supplier{" +
+                "id=" + id +
+                ", companyName='" + companyName + '\'' +
+                ", contactName='" + contactName + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", country='" + country + '\'' +
+                '}';
+    }
 }
