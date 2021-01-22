@@ -6,8 +6,8 @@ import javax.persistence.*;
 @Table(name="everyloop.company.products")
 public class Product {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    private int Id;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     private String productName;
 
@@ -30,7 +30,7 @@ public class Product {
     }
 
     public Product(int id, String productName, Supplier supplier, ProductCategory productCategory, String quantityPerUnit, float unitPrice, int unitsInStock, int unitsOnOrder, int reorderLevel, int discontinued) {
-        Id = id;
+        this.id = id;
         this.productName = productName;
         this.supplier = supplier;
         this.productCategory = productCategory;
@@ -43,11 +43,11 @@ public class Product {
     }
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getProductName() {
