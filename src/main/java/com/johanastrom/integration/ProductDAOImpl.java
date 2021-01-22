@@ -24,6 +24,17 @@ public class ProductDAOImpl implements ProductDAO {
     }
 
     @Override
+    public boolean delete(int id) {
+        em = emf.createEntityManager();
+        em.getTransaction().begin();
+        Product p = em.find(Product.class, id);
+        em.remove(p);
+        em.getTransaction().commit();
+
+        return em.find(Product.class, p)==null;
+    }
+
+    @Override
     public float incrementUnitPrice(int id, float value) {
         em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -57,8 +68,9 @@ public class ProductDAOImpl implements ProductDAO {
     }
 
     @Override
-    public List<Product> getByCategory(ProductCategory pc) {
+    public List<Product> getByCategory(int id) {
         em = emf.createEntityManager();
+        ProductCategory pc = em.find(ProductCategory.class, id);
         List<Product> productsInCategory =
                 em.createQuery("select p from Product p where p.productCategory.categoryName = :prodCategory")
                 .setParameter("prodCategory", pc.getCategoryName())

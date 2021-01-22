@@ -14,7 +14,9 @@ public class Main {
 
         ProductDAOImpl productDAO = new ProductDAOImpl();
 
-        System.out.println(productDAO.getSupplier(71));
+        for (Product p: productDAO.getAll()){
+            System.out.println(p);
+        }
 
 
 

@@ -15,6 +15,14 @@ public interface ProductDAO {
     void add(Product p);
 
     /**
+     * Removes the Product with the specified id.
+     * @param id
+     *        Id of the product to be removed.
+     * @return true if delete was successful.
+     */
+    boolean delete(int id);
+
+    /**
      * Changes the unitPrice field by the specified value. Returns the new price,
      * or if new price is less than 0, does not update the price, returns -1 and prints a message.
      * @param id
@@ -41,10 +49,10 @@ public interface ProductDAO {
 
     /**
      * Retrieves a list with all the Product objects in a specific ProductCategory.
-     * @param pc
-     *        The ProductCategory to query.
+     * @param id
+     *        The id of the ProductCategory to query.
      * @return A List<Product> of all Product objects in the ProductCategory.
      */
-    List<Product> getByCategory(ProductCategory pc);
+    List<Product> getByCategory(int id);
 
 }
