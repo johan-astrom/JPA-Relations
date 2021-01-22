@@ -15,20 +15,28 @@ public interface ProductDAO {
     void add(Product p);
 
     /**
-     * Increments the unitPrice field by the specified value. Returns the new price.
-     * @param incrementValue
-     *        The value to add to the existing price.
+     * Changes the unitPrice field by the specified value. Returns the new price.
+     * @param id
+     *        Id of the Product object to update.
+     * @param value
+     *        The value to add to or deduct from the existing price.
      * @return The new price total.
      */
-    float incrementUnitPrice(float incrementValue);
+    float incrementUnitPrice(int id, float value);
+
+    /**
+     * Retrieves all Product objects stored in the database.
+     * @return A List of all persisted Product objects.
+     */
+    List<Product> getAll();
 
     /**
      * Returns the Supplier object for the specified product.
-     * @param p
-     *        The product to query for the associated supplier.
+     * @param id
+     *        The id of the product to query for the associated supplier.
      * @return The associated Supplier object.
      */
-    Supplier getSupplier(Product p);
+    Supplier getSupplier(int id);
 
     /**
      * Retrieves a list with all the Product objects in a specific ProductCategory.
