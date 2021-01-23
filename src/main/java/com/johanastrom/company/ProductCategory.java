@@ -16,6 +16,11 @@ public class ProductCategory {
     private String categoryName;
     private String description;
 
+    public void addProduct(Product p){
+        this.productList.add(p);
+        p.setProductCategory(this);
+    }
+
     public int getId() {
         return id;
     }

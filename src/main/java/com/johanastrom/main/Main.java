@@ -22,7 +22,6 @@ public class Main {
 
         //productDAO.add(new Product(78, "JohansProdukt!!", s, pc, "sdf", 0.345f));
 
-        System.out.println(productDAO.getSupplier(1));
 
         /*UserDAOImpl userDAO = new UserDAOImpl();
 
