@@ -12,8 +12,8 @@ import java.util.List;
 
 public class ProductDAOImpl implements ProductDAO {
 
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa-relations");
-    EntityManager em;
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa-relations");
+    private EntityManager em;
 
     @Override
     public void add(Product p) {
@@ -49,6 +49,13 @@ public class ProductDAOImpl implements ProductDAO {
         em.getTransaction().commit();
 
         return newPrice;
+    }
+
+    @Override
+    public Product get(int id) {
+        em = emf.createEntityManager();
+        Product p = em.find(Product.class, id);
+        return p;
     }
 
     @Override

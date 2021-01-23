@@ -34,6 +34,13 @@ public interface ProductDAO {
     float incrementUnitPrice(int id, float value);
 
     /**
+     * Retrieves the Product object with the specified id. Returns null if none is found.
+     * @param id
+     *        The id for the Product object.
+     * @return The Product object with the specified id.
+     */
+    Product get(int id);
+    /**
      * Retrieves all Product objects stored in the database.
      * @return A List of all persisted Product objects.
      */

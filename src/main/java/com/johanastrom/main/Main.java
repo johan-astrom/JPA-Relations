@@ -1,6 +1,8 @@
 package com.johanastrom.main;
 
 import com.johanastrom.company.Product;
+import com.johanastrom.company.ProductCategory;
+import com.johanastrom.company.Supplier;
 import com.johanastrom.integration.ProductDAO;
 import com.johanastrom.integration.ProductDAOImpl;
 import com.johanastrom.integration.UserDAOImpl;
@@ -14,10 +16,9 @@ public class Main {
 
         ProductDAOImpl productDAO = new ProductDAOImpl();
 
-        for (Product p: productDAO.getAll()){
-            System.out.println(p);
-        }
 
+
+        productDAO.add(new Product(123, "JohansProdukt!!", new Supplier(), new ProductCategory(), "sdf", 0.345f));
 
 
         /*UserDAOImpl userDAO = new UserDAOImpl();
