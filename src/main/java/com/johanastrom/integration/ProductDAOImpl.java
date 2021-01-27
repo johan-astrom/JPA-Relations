@@ -19,9 +19,11 @@ public class ProductDAOImpl implements ProductDAO {
     public void add(Product p) {
         em = emf.createEntityManager();
         em.getTransaction().begin();
-        //p.setProductCategory(em.find(ProductCategory.class, 1));
-        //p.setSupplier(em.find(Supplier.class, 1));
-        em.persist(p);
+        if (em.find(Product.class, p.getId())!=null){
+            System.out.println("Product already exists.");
+        }else {
+            em.persist(p);
+        }
         em.getTransaction().commit();
     }
 
