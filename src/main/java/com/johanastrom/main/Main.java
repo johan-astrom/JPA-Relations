@@ -27,8 +27,13 @@ public class Main {
 
         System.out.println(productDAO.getSupplier(100));
 
+        System.out.println("Old price : " + productDAO.get(100).getUnitPrice());
         float newPrice = productDAO.incrementUnitPrice(200, 13.00F);
+        System.out.println("New price : " +newPrice);
 
+        for (Product product : productDAO.getByCategory(2)){
+            System.out.println(product);
+        }
 
         for (Product product : productDAO.getAll()){
             System.out.println(product);
