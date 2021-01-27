@@ -39,11 +39,8 @@ public class Main {
             System.out.println(product);
         }
 
-
-        productDAO.delete(123);
-        productDAO.delete(100);
-        productDAO.delete(101);
-        productDAO.incrementUnitPrice(200, 13.00F);
+        boolean deleted = productDAO.delete(100);
+        System.out.println("Product deleted was " + deleted);
 
         /*UserDAOImpl userDAO = new UserDAOImpl();
 
