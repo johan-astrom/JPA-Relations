@@ -1,3 +1,3 @@
-#JPALab
+# JPA with relations
 
-Assignment to create a basic JPA application with a DAO interface. Persists and reads "User" objects from a database.
+Assignment to create a JPA application with relations. Performs CRUD operations on User and Product objects persisted in a database.
