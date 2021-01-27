@@ -14,6 +14,8 @@ public class Main {
 
     public static void main(String[] args){
 
+        //Product Code
+
         ProductDAOImpl productDAO = new ProductDAOImpl();
 
         Product p = productDAO.get(1);
@@ -35,14 +37,16 @@ public class Main {
             System.out.println(product);
         }
 
-        for (Product product : productDAO.getAll()){
+        for (Object product : productDAO.getAll()){
             System.out.println(product);
         }
 
         boolean deleted = productDAO.delete(100);
         System.out.println("Product deleted was " + deleted);
 
-        /*UserDAOImpl userDAO = new UserDAOImpl();
+        //User code
+
+        UserDAOImpl userDAO = new UserDAOImpl();
 
         boolean persist = userDAO.create(new User("890607-1234", "johast", "myPwd123", "Johan", "Åström", "johan@johansmail.com", "098765432"));
         System.out.println(persist);
@@ -64,9 +68,9 @@ public class Main {
         System.out.println("Value before update: " + valueBeforeUpdate);
         System.out.println("Values after update: " + userDAO.getOne("890607-1234"));
 
-        boolean deleted = (userDAO.delete("890607-1234"));
+        deleted = (userDAO.delete("890607-1234"));
         System.out.println(deleted);
 
-         */
+
     }
 }

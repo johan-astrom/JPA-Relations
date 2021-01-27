@@ -9,7 +9,7 @@ import java.util.List;
 
 public class UserDAOImpl implements UserDAO {
 
-    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPALab");
+    private EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpa-relations");
 
     @Override
     public boolean create(User user) {

@@ -72,7 +72,7 @@ public class ProductDAOImpl implements ProductDAO {
     @Override
     public List<Product> getAll() {
         em = emf.createEntityManager();
-        List<Product> productList= em.createQuery("select p.id, p.productName from Product p")
+        List<Product> productList= em.createQuery("select p from Product p")
                 .getResultList();
         return productList;
     }
