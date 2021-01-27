@@ -11,11 +11,11 @@ public class Product {
 
     private String productName;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "supplierId")
     private Supplier supplier;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "categoryId")
     private ProductCategory productCategory;
 

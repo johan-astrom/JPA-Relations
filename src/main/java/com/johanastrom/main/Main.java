@@ -19,9 +19,9 @@ public class Main {
         Product p = productDAO.get(1);
         Supplier s = p.getSupplier();
         ProductCategory pc = p.getProductCategory();
-
-        //productDAO.add(new Product(78, "JohansProdukt!!", s, pc, "sdf", 0.345f));
-
+        //productDAO.add( new Product(123, "JohansProdukt", s, pc, "sdf", 0.345f));
+        //productDAO.delete(100);
+        productDAO.incrementUnitPrice(200, 13.00F);
 
         /*UserDAOImpl userDAO = new UserDAOImpl();
 

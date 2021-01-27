@@ -1,5 +1,11 @@
+/Users/asapersson/Documents/johan-iths/idea-projects/excercises/jpa-relations/src/main/java/com/johanastrom/integration/ProductDAOImpl.java
 /Users/asapersson/Documents/johan-iths/idea-projects/excercises/jpa-relations/src/main/java/com/johanastrom/integration/UserDAOImpl.java
 /Users/asapersson/Documents/johan-iths/idea-projects/excercises/jpa-relations/src/main/java/com/johanastrom/users/User.java
 /Users/asapersson/Documents/johan-iths/idea-projects/excercises/jpa-relations/src/main/java/com/johanastrom/main/TestMain.java
+/Users/asapersson/Documents/johan-iths/idea-projects/excercises/jpa-relations/src/main/java/com/johanastrom/company/OrderDetails.java
+/Users/asapersson/Documents/johan-iths/idea-projects/excercises/jpa-relations/src/main/java/com/johanastrom/company/Product.java
+/Users/asapersson/Documents/johan-iths/idea-projects/excercises/jpa-relations/src/main/java/com/johanastrom/company/ProductCategory.java
+/Users/asapersson/Documents/johan-iths/idea-projects/excercises/jpa-relations/src/main/java/com/johanastrom/company/Supplier.java
+/Users/asapersson/Documents/johan-iths/idea-projects/excercises/jpa-relations/src/main/java/com/johanastrom/integration/ProductDAO.java
 /Users/asapersson/Documents/johan-iths/idea-projects/excercises/jpa-relations/src/main/java/com/johanastrom/main/Main.java
 /Users/asapersson/Documents/johan-iths/idea-projects/excercises/jpa-relations/src/main/java/com/johanastrom/integration/UserDAO.java

@@ -6,10 +6,13 @@
 	<persistence-unit name="jpa-relations" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<class>com.johanastrom.users.User</class>
+		<class>com.johanastrom.company.Product</class>
+		<class>com.johanastrom.company.ProductCategory</class>
+		<class>com.johanastrom.company.Supplier</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost"/>
-			<property name="javax.persistence.jdbc.user" value="default"/>
-			<property name="javax.persistence.jdbc.password" value="default"/>
+			<property name="javax.persistence.jdbc.user" value="sa"/>
+			<property name="javax.persistence.jdbc.password" value="Snackskal123"/>
 			<property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
 			<property name = "hibernate.show_sql" value = "true" />
 	

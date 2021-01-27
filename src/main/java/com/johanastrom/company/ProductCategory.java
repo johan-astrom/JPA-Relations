@@ -2,6 +2,7 @@ package com.johanastrom.company;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "everyloop.company.categories")
@@ -10,8 +11,8 @@ public class ProductCategory {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "productCategory")
-    private List<Product> productList;
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "productCategory")
+    private Set<Product> productList;
 
     private String categoryName;
     private String description;
@@ -23,6 +24,14 @@ public class ProductCategory {
 
     public int getId() {
         return id;
+    }
+
+    public Set<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(Set<Product> productList) {
+        this.productList = productList;
     }
 
     public String getCategoryName() {

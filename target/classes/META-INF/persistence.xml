@@ -6,6 +6,9 @@
 	<persistence-unit name="jpa-relations" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<class>com.johanastrom.users.User</class>
+		<class>com.johanastrom.company.Product</class>
+		<class>com.johanastrom.company.ProductCategory</class>
+		<class>com.johanastrom.company.Supplier</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost"/>
 			<property name="javax.persistence.jdbc.user" value="sa"/>

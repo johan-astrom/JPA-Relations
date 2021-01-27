@@ -19,6 +19,8 @@ public class ProductDAOImpl implements ProductDAO {
     public void add(Product p) {
         em = emf.createEntityManager();
         em.getTransaction().begin();
+        //p.setProductCategory(em.find(ProductCategory.class, 1));
+        //p.setSupplier(em.find(Supplier.class, 1));
         em.persist(p);
         em.getTransaction().commit();
     }
@@ -28,10 +30,13 @@ public class ProductDAOImpl implements ProductDAO {
         em = emf.createEntityManager();
         em.getTransaction().begin();
         Product p = em.find(Product.class, id);
+        if (p==null){
+            return false;
+        }
         em.remove(p);
         em.getTransaction().commit();
 
-        return em.find(Product.class, p)==null;
+        return em.find(Product.class, p.getId())==null;
     }
 
     @Override
@@ -39,6 +44,10 @@ public class ProductDAOImpl implements ProductDAO {
         em = emf.createEntityManager();
         em.getTransaction().begin();
         Product product = em.find(Product.class, id);
+        if (product==null){
+            System.out.println("Product not found.");
+            return -1;
+        }
         float newPrice = product.getUnitPrice() + value;
         if (newPrice<0){
             em.getTransaction().commit();
@@ -61,7 +70,7 @@ public class ProductDAOImpl implements ProductDAO {
     @Override
     public List<Product> getAll() {
         em = emf.createEntityManager();
-        List<Product> productList= em.createQuery("select p from Product p")
+        List<Product> productList= em.createQuery("select p.id, p.productName from Product p")
                 .getResultList();
         return productList;
     }

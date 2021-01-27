@@ -2,6 +2,7 @@ package com.johanastrom.company;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "everyloop.company.suppliers")
@@ -10,8 +11,8 @@ public class Supplier {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToMany(cascade = CascadeType.REMOVE, mappedBy = "supplier")
-    private List<Product> productList;
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "supplier")
+    private Set<Product> productList;
 
     private String companyName;
     private String contactName;
@@ -19,8 +20,21 @@ public class Supplier {
     private String city;
     private String country;
 
+    public void addProduct(Product p){
+        this.productList.add(p);
+        p.setSupplier(this);
+    }
+
     public int getId() {
         return id;
+    }
+
+    public Set<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(Set<Product> productList) {
+        this.productList = productList;
     }
 
     public String getCompanyName() {
