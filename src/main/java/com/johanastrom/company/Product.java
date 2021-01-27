@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name="everyloop.company.products")
 public class Product {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id //@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String productName;

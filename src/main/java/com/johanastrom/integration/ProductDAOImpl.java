@@ -76,9 +76,9 @@ public class ProductDAOImpl implements ProductDAO {
     }
 
     @Override
-    public Supplier getSupplier(int id) {
+    public Supplier getSupplier(int productId) {
         em = emf.createEntityManager();
-        Product p = em.find(Product.class, id);
+        Product p = em.find(Product.class, productId);
         System.out.println("Supplier is: " + p.getSupplier().getCompanyName());
         return p.getSupplier();
     }

@@ -52,7 +52,7 @@ public interface ProductDAO {
      *        The id of the product to query for the associated supplier.
      * @return The associated Supplier object.
      */
-    Supplier getSupplier(int id);
+    Supplier getSupplier(int productId);
 
     /**
      * Retrieves a list with all the Product objects in a specific ProductCategory.

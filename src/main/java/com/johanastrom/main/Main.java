@@ -19,8 +19,25 @@ public class Main {
         Product p = productDAO.get(1);
         Supplier s = p.getSupplier();
         ProductCategory pc = p.getProductCategory();
-        //productDAO.add( new Product(123, "JohansProdukt", s, pc, "sdf", 0.345f));
-        //productDAO.delete(100);
+
+
+        productDAO.add( new Product(100, "JohansProdukt", s, pc, "sdf", 0.345f));
+
+        System.out.println(productDAO.get(100));
+
+        System.out.println(productDAO.getSupplier(100));
+
+        float newPrice = productDAO.incrementUnitPrice(200, 13.00F);
+
+
+        for (Product product : productDAO.getAll()){
+            System.out.println(product);
+        }
+
+
+        productDAO.delete(123);
+        productDAO.delete(100);
+        productDAO.delete(101);
         productDAO.incrementUnitPrice(200, 13.00F);
 
         /*UserDAOImpl userDAO = new UserDAOImpl();
