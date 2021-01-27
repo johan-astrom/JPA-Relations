@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Table(name = "everyloop.company.suppliers")
+@Table(name = "default.company.suppliers")
 public class Supplier {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)

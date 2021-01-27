@@ -3,7 +3,7 @@ package com.johanastrom.company;
 import javax.persistence.*;
 
 @Entity
-@Table(name="everyloop.company.products")
+@Table(name="default.company.products")
 public class Product {
 
     @Id //@GeneratedValue(strategy = GenerationType.IDENTITY)
